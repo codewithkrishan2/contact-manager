@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="utf-8">
+<title th:text="${title}">Home</title>
+</head>
+<body>
+	<section class="home-banner d-flex justify-content-center align-items-center text-center">
+		<div class="text-center">
+			<div>
+				<h1 class="font-weight-bol">
+					<span style="color: orange;">Smart </span> Contact Manager
+				</h1>
+			</div>
+			<div class="fs-3 m-auto home-page-p">
+				<p><span style="color: orange;">Say</span> hello to a smarter way of managing your contacts. Join us
+					now and unlock the full potential of effortless contact management.
+					Let's build stronger connections together!
+				</p>
+			</div>
+			<button class="btn my-button btn-lg">Get Started</button>
+		</div>
+	</section>
+</body>
+</html>

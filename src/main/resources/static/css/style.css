@@ -1,0 +1,54 @@
+body{
+	padding:0;
+	margin:0;
+	background:#e2e2e2;
+}
+
+.home-banner{
+	width:100%;
+	height:93vh;
+	color:white;
+	background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url(../img/banner.jpg);
+	background-size: cover;
+	/* display:flex; */
+	
+}
+.my-button {
+  background-color: #ff8000; /* orange background color */
+  color: white; /* White text color */
+  padding: 12px 24px; /* Padding around the button content */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  font-size: 16px; /* Font size of the button text */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+/* Add some hover effect */
+.my-button:hover {
+  background-color: #ff8040; /* Darker orange background color on hover */
+}
+
+.home-page-p{
+	width:50%;
+	margin:auto;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: #ff8000;
+}
+
+.my-card{
+	padding:20px;
+	width:60%;
+	margin:auto;
+	color:black;
+	border-radius:7px;
+	background:orange;
+}
+@media screen and (max-width: 600px) {
+	  .home-page-p{
+		width:100%;
+		margin:auto;
+	}
+}
