@@ -47,8 +47,40 @@ body{
 	background:orange;
 }
 @media screen and (max-width: 600px) {
-	  .home-page-p{
+
+}
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+  	.home-page-p{
 		width:100%;
 		margin:auto;
 	}
+	
+	.my-card{
+		padding:20px;
+		width:100%;
+		margin:auto;
+		color:black;
+		border-radius:7px;
+		background:orange;
+	}	
+	/* .password-hint{
+		visibility: hidden;
+		margin-left:0;
+	} */
 }
+
+/* Media query for tablets */
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  .my-card{
+		padding:20px;
+		width:100%;
+		margin:auto;
+		color:black;
+		border-radius:7px;
+		background:orange;
+	}	
+}
+

@@ -7,40 +7,49 @@
 </head>
 <body>
 	<section
-		class="home-banner d-flex justify-content-center align-items-center text-center">
+		class="home-banner d-flex justify-content-center align-items-center">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 m-auto">
+				
 					<div class="my-card">
+						<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-dismissible fade show" role="alert">
+						  <p><strong th:text="${session.message.content}"></strong></p>
+						  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						  <!-- <th:block th:text="${#session.removeAttribute('message')}"></th:block> -->						  
+						</div>
 						<h1 class="text-center mb-4">Register For Managing Contacts</h1>
 						<hr>
-						<form th:action="@{/doRegister}" method="POST">
+						<form th:action="@{/doRegister}" method="POST" th:object="${user}">
 						
 						<div class="row">
-						  <div class="col">
+						  <div class="col-lg-6 col-md-12 col-sm-12">
 						    <div class="form-floating mb-3">
-								<input type="text" class="form-control"  id="name-field" placeholder="John Doe" required> 
+								<input name="name" type="text" class="form-control" 
+								 id="name-field" placeholder="John Doe" 
+								 required th:value="${user.name}" > 
 								<label for="name-field">Your Name</label>
 							</div>
 						  </div>
-						  <div class="col">
+						  <div class="col-lg-6 col-md-12 col-sm-12">
 						    <div class="form-floating mb-3">
-								<input type="email" class="form-control" id="email-field" placeholder="your.email@mail.com" required> 
+								<input name="email" type="email" class="form-control" id="email-field" placeholder="your.email@mail.com" 
+								required th:value="${user.email}"> 
 								<label for="email-field">Email address</label>
 							</div>
 						  </div>
 						</div>
 						
 						<div class="row">
-						  <div class="col-6">
+						  <div class="col-lg-6 col-md-12 col-sm-12">
 						    <div class="form-floating mb-3">
-								<input type="password" class="form-control" id="inputPassword" placeholder="Password" aria-describedby="passwordHelpInline">
+								<input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password" aria-describedby="passwordHelpInline">
 								<label for="inputPassword">Password</label>
 							</div>
 						  </div>
-						  <div class="col-6">
+						  <div class="col-lg-6 col-md-12 col-sm-12 password-hint">
 						    <span id="passwordHelpInline" class="form-text text-white">
-						      Your password must be 8-20 characters long, contain letters and numbers.
+						      Password must be 8-20 characters long, contain letters and numbers.
 						    </span>
 						  </div>
 						</div>
@@ -48,13 +57,27 @@
 						<div class="row">
 						  <div class="col">
 						    <div class="form-floating mb-3">
-							  <textarea class="form-control" placeholder="Leave a comment here" id="aboutField" style="height: 100px"></textarea>
+							  <textarea name="about" class="form-control" placeholder="Leave a comment here" 
+							  id="aboutField" style="height: 100px"
+							  th:value="${user.about}" ></textarea>
 							  <label for="aboutField">Enter Something About Yourself:</label>
 							</div>
 						  </div>
 						</div>
-						  <button type="reset" class="btn btn-secondary">Reset</button>
-						  <button type="submit" class="btn btn-primary">Submit</button>
+						<div class="row">
+							<div class="col">
+							    <div class="form-check" style="position:relative;">
+							      <input name="agreement" class="form-check-input " type="checkbox" id="agreement">
+							      <label class="form-check-label" for="agreement">
+							        I Accept Terms and Conditions
+							      </label>
+							    </div>
+							  </div>
+						</div>
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button type="reset" class="btn btn-secondary text-center">Reset</button>
+							<button type="submit" class="btn btn-primary text-center">Submit</button>
+						</div>
 						</form>
 					</div>
 				</div>
