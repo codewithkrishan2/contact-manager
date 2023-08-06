@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CustomUserDetails implements UserDetails {
 
-	/*
+	
 	private User user;
 	
 	@Override
@@ -57,5 +57,5 @@ public class CustomUserDetails implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	*/
+	
 }

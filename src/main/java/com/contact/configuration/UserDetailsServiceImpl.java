@@ -10,7 +10,7 @@ import com.contact.repository.UserRepository;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 	
-	/*
+	
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -28,5 +28,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		CustomUserDetails customUserDetails = new CustomUserDetails(user);
 		return customUserDetails;
 	}
-	*/
+	
 }
