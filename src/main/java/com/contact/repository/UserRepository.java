@@ -9,7 +9,9 @@ import com.contact.entities.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 	
 	
-	@Query("select u from User where u.email = : email")
+	@Query("select u from User u where u.email = :email")
 	public User getUserByUsername(@Param("email")String email);
+	
+	
 	
 }
