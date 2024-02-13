@@ -10,7 +10,7 @@ import com.contact.repository.UserRepository;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 	
-	/*
+	
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -20,7 +20,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		//Fetching user from database
+		
 		User user = userRepository.getUserByUsername(username);
+		
 		if(user==null) {
 			throw new UsernameNotFoundException("Could Not Find User");
 			
@@ -28,5 +30,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		CustomUserDetails customUserDetails = new CustomUserDetails(user);
 		return customUserDetails;
 	}
-	*/
+	
 }
